@@ -66,14 +66,36 @@ int check_situation(int grid[]) {
 		return 1;
 	else if (grid[2] == 1 && grid[4] == 1 && grid[6] == 1)
 		return 1;
+	
+	else if (grid[0] == 2 && grid[1] == 2 && grid[2] == 2)
+		return -1;
+	else if (grid[3] == 2 && grid[4] == 2 && grid[5] == 2)
+		return -1;
+	else if (grid[6] == 2 && grid[7] == 2 && grid[8] == 2)
+		return -1;
+	else if (grid[0] == 2 && grid[3] == 2 && grid[6] == 2)
+		return -1;
+	else if (grid[1] == 2 && grid[4] == 2 && grid[7] == 2)
+		return -1;
+	else if (grid[2] == 2 && grid[5] == 2 && grid[8] == 2)
+		return -1;
+	else if (grid[0] == 2 && grid[4] == 2 && grid[8] == 2)
+		return -1;
+	else if (grid[2] == 2 && grid[4] == 2 && grid[6] == 2)
+		return -1;
+	
 	else if (grid_full(grid))
 		return 10;
+	
+	else
+		return 0;
 }
 
 void cpu_turn(int grid[]) {
 	while(1) {
-		int n = rand() % 9;
-		if (grid[n] == 0) {
+		initrand();
+		int n = rand() % 10;
+		if (check_availability(grid, n+1) == 1) {
 			grid[n] = 2;
 			break;
 		}
@@ -88,9 +110,13 @@ main() {
 		grid[i] = 0;
 	}
 	
-	while (1) {
-		initrand();
-		
+	printf("O X O X O X O X O X O X O X O X O X O\n");
+	printf("X                                   X\n");
+	printf("O  Welcome to noughts and crosses!  O\n");
+	printf("X                                   X\n");
+	printf("O X O X O X O X O X O X O X O X O X O\n\n");
+	
+	while (1) {		
 		print_grid(grid);
 		
 		printf("It's your turn, pick a number.\n0 will quit the game.\n");
@@ -122,7 +148,12 @@ main() {
 		}
 		
 		cpu_turn(grid);
+		if (check_situation(grid) == -1) {
+			print_grid(grid);
+			printf("O has won the game!\n");
+			break;
 		}
-		
-		return 0;
+	}
+	
+	return 0;
 }
