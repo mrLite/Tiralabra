@@ -7,7 +7,7 @@ void initrand() {
     srand((unsigned int)(time(NULL)));
 }
 
-// Returns 1 if the grid is full.
+// Returns 1 if the grid is full and 0 if there's at least one slot free .
 int grid_full(int grid[]) {
 	int full = 1;
 	int i;
@@ -50,47 +50,52 @@ int check_availability(int grid[], int number) {
 // Checks the current game situation, returns 1 if X has won, -1 if O has won and 10 if it's a tie.
 // Also returns 0 if the game hasn't ended yet.
 int check_situation(int grid[]) {
-	if (grid[0] == 1 && grid[1] == 1 && grid[2] == 1)
-		return 1;
-	else if (grid[3] == 1 && grid[4] == 1 && grid[5] == 1)
-		return 1;
-	else if (grid[6] == 1 && grid[7] == 1 && grid[8] == 1)
-		return 1;
-	else if (grid[0] == 1 && grid[3] == 1 && grid[6] == 1)
-		return 1;
-	else if (grid[1] == 1 && grid[4] == 1 && grid[7] == 1)
-		return 1;
-	else if (grid[2] == 1 && grid[5] == 1 && grid[8] == 1)
-		return 1;
-	else if (grid[0] == 1 && grid[4] == 1 && grid[8] == 1)
-		return 1;
-	else if (grid[2] == 1 && grid[4] == 1 && grid[6] == 1)
-		return 1;
+	int situation;
 	
+	if (grid[0] == 1 && grid[1] == 1 && grid[2] == 1)
+		situation = 1;
+	else if (grid[3] == 1 && grid[4] == 1 && grid[5] == 1)
+		situation = 1;
+	else if (grid[6] == 1 && grid[7] == 1 && grid[8] == 1)
+		situation = 1;
+	else if (grid[0] == 1 && grid[3] == 1 && grid[6] == 1)
+		situation = 1;
+	else if (grid[1] == 1 && grid[4] == 1 && grid[7] == 1)
+		situation = 1;
+	else if (grid[2] == 1 && grid[5] == 1 && grid[8] == 1)
+		situation = 1;
+	else if (grid[0] == 1 && grid[4] == 1 && grid[8] == 1)
+		situation = 1;
+	else if (grid[2] == 1 && grid[4] == 1 && grid[6] == 1)
+		situation = 1;
+
 	else if (grid[0] == 2 && grid[1] == 2 && grid[2] == 2)
-		return -1;
+		situation = -1;
 	else if (grid[3] == 2 && grid[4] == 2 && grid[5] == 2)
-		return -1;
+		situation = -1;
 	else if (grid[6] == 2 && grid[7] == 2 && grid[8] == 2)
-		return -1;
+		situation = -1;
 	else if (grid[0] == 2 && grid[3] == 2 && grid[6] == 2)
-		return -1;
+		situation = -1;
 	else if (grid[1] == 2 && grid[4] == 2 && grid[7] == 2)
-		return -1;
+		situation = -1;
 	else if (grid[2] == 2 && grid[5] == 2 && grid[8] == 2)
-		return -1;
+		situation = -1;
 	else if (grid[0] == 2 && grid[4] == 2 && grid[8] == 2)
-		return -1;
+		situation = -1;
 	else if (grid[2] == 2 && grid[4] == 2 && grid[6] == 2)
-		return -1;
+		situation = -1;
 	
 	else if (grid_full(grid))
-		return 10;
+		situation = 10;
 	
 	else
-		return 0;
+		situation = 0;
+	
+	return situation;
 }
 
+// Chooses number from the range 0..9 pseudo-randomly and checks its availability in the grid until it finds a slot that is free.
 void cpu_turn(int grid[]) {
 	while(1) {
 		initrand();
@@ -99,6 +104,8 @@ void cpu_turn(int grid[]) {
 			grid[n] = 2;
 			break;
 		}
+		else
+			continue;
 	}
 }
 
@@ -121,7 +128,9 @@ main() {
 		
 		printf("It's your turn, pick a number.\n0 will quit the game.\n");
 		scanf("%d", &number);
-	
+		
+		// Loop starts from the beginning until the user has input a number between 1 and 9.
+		// After a decent input we'll check if the slot chosen by the user is free.
 		if (number < 0 || number > 9)
 			continue;
 		else if (number == 0)
@@ -135,7 +144,8 @@ main() {
 				grid[number-1] = 1;
 			}
 		}
-			
+		
+		// After the player's turn the game situation must be checked to see if it has ended, either in a win or a tie.
 		if (check_situation(grid) == 1) {
 			print_grid(grid);
 			printf("X has won the game!\n");
@@ -147,10 +157,17 @@ main() {
 			break;
 		}
 		
+		// Opponents turn, after which we check if it has won the game or if the game ended in a tie.
 		cpu_turn(grid);
+		
 		if (check_situation(grid) == -1) {
 			print_grid(grid);
 			printf("O has won the game!\n");
+			break;
+		}
+		else if (check_situation(grid) == 10) {
+			print_grid(grid);
+			printf("Game ended in a tie.\n");
 			break;
 		}
 	}
