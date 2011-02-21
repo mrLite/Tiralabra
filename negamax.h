@@ -1,0 +1,1 @@
+int negamax(int grid[], int player);

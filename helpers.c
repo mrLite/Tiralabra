@@ -3,17 +3,7 @@
 #include <time.h>
 #include <string.h>
 #include "helpers.h"
-
-// Returns 1 if the grid is full and 0 if there's at least one free slot.
-int grid_full(int grid[]) {
-	int full = 1;
-	int i;
-	for (i = 0; i < 9; i++) {
-		if (grid[i] == 0)
-			full = 0;
-	}
-	return full;
-}
+#include "negamax.h"
 
 // Prints the game grid showing available slots as numbers.
 void print_grid(int grid[]) {
@@ -31,6 +21,17 @@ void print_grid(int grid[]) {
 		else
 			printf("|");
 		}
+}
+
+// Returns 1 if the grid is full and 0 if there's at least one free slot.
+int grid_full(int grid[]) {
+	int full = 1;
+	int i;
+	for (i = 0; i < 9; i++) {
+		if (grid[i] == 0)
+			full = 0;
+	}
+	return full;
 }
 
 // Check to see if the slot in the game grid (1..9) chosen by the user is available.
