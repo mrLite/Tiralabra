@@ -2,13 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <math.h>
+#include "main.h"
 #include "helpers.h"
 #include "negamax.h"
 
 // Prints the game grid showing available slots as numbers.
 void print_grid(int grid[]) {
 	int i;
-	for (i = 0; i < 9; i++) {
+	for (i = 0; i < GRID_SIZE; i++) {
 		if (grid[i] == 0)
 			printf("%d", i+1);
 		else if (grid[i] == 1)
@@ -16,7 +18,7 @@ void print_grid(int grid[]) {
 		else
 			printf("O");
 			
-		if ((i+1)%3 == 0)
+		if ((i+1)%((int)sqrt(GRID_SIZE)) == 0)
 			printf("\n");
 		else
 			printf("|");
@@ -27,7 +29,7 @@ void print_grid(int grid[]) {
 int grid_full(int grid[]) {
 	int full = 1;
 	int i;
-	for (i = 0; i < 9; i++) {
+	for (i = 0; i < GRID_SIZE; i++) {
 		if (grid[i] == 0)
 			full = 0;
 	}

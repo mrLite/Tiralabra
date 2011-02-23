@@ -2,12 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <math.h>
+#include "main.h"
 #include "helpers.h"
 #include "negamax.h"
 
 main() {
-	int GRID_SIZE;
-	int number;
+	int number;		// This will be used to hold the player's move in the grid.
+	int* grid;		// The game grid array.
+	int input;		// User's input from the main menu.
 	
 	printf(" \033[2J");
 	//system("clear");
@@ -19,16 +22,24 @@ main() {
 	printf("O X O X O X O X O X O X O X O X O X O\n\n");
 	
 	while(1) {
-		printf("Menu:\n");
+		printf("Main menu:\n");
 		printf("1\t3X3 game grid\n");
+		printf("2\t4X4 game grid\n");
 		printf("0\tExit\n");
-		int input;
+		
 		scanf("%d", &input);
+		
 		if (input == 0)
 			exit(EXIT_SUCCESS);
 		else if (input == 1) {
 			GRID_SIZE = 9;
 			break;			
+		}
+		else if (input == 2) {
+			printf("Under construction. Sorry!\n");
+			continue;
+			// GRID_SIZE = 16;
+			// break;
 		}
 		else {
 			printf("Not a valid option!\n");
@@ -36,10 +47,15 @@ main() {
 		}
 	}
 	
-	int* grid = malloc(sizeof(int)*GRID_SIZE);
-	int i;
-	for (i = 0; i < GRID_SIZE; i++) {
-		grid[i] = 0;
+	if ((grid = malloc(sizeof(int)*GRID_SIZE)) != NULL) {
+		int i;
+		for (i = 0; i < GRID_SIZE; i++) {
+			grid[i] = 0;
+		}
+	}
+	else {
+		printf("I CAN HAS NO MEMORY!!1\n");
+		exit(EXIT_FAILURE);
 	}
 	
 	while(1) {
@@ -50,7 +66,7 @@ main() {
 		
 		// Loop starts from the beginning until the user has input a number between 1 and 9.
 		// After a decent input we'll check if the slot chosen by the user is free.
-		if (number < 0 || number > 9)
+		if (number < 0 || number > GRID_SIZE)
 			continue;
 		else if (number == 0)
 			break;
@@ -93,5 +109,7 @@ main() {
 	}
 	
 	free(grid);
+	grid = NULL;
+	
 	return 0;
 }

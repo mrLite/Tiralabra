@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <math.h>
+#include "main.h"
 #include "helpers.h"
 #include "negamax.h"
 
@@ -16,11 +18,11 @@ struct move negamax(int game_grid[], int player) {
 	if (situation == 0) {
 		// For each legal move on the board, find the one which maximizes the minimum gain.
 		int i;
-		for(i = 0; i < 9; i++) {
+		for(i = 0; i < GRID_SIZE; i++) {
 			if (game_grid[i] == 0) {
 				int temp_grid[9];
 				int n;
-				for (n = 0; n < 9; n++) {
+				for (n = 0; n < GRID_SIZE; n++) {
 					temp_grid[n] = game_grid[n];
 				}
 				int current_slot = i;
