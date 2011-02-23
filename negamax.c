@@ -61,23 +61,5 @@ struct move negamax(int game_grid[], int player) {
 		exit(EXIT_FAILURE);
 	}
 		
-	// The return value is the index of the slot in grid[9], which has the best end result for player.
 	return best_move;
 }
-
-/*
-const int sign[2]={1,-1}   //0 is blue, 1 is red
-
-int NegaMax(Board b, int depth, int color) {
-    if (GameOver(b) or depth>MaxDepth)
-        return sign[color]*Analysis(b)
-    int max = -infinity
-    for each legal move m in board b {
-        copy b to c
-        make move m in board c
-        int x= - NegaMax(c, depth+1, 1-color)  //Note the "-" before "NegaMax"
-        if (x>max) max = x
-    }
-    return max
-}
-*/

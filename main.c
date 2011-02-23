@@ -6,13 +6,10 @@
 #include "negamax.h"
 
 main() {
+	int GRID_SIZE;
 	int number;
-	int grid[9];
-	int i;
-	for (i = 0; i < 9; i++) {
-		grid[i] = 0;
-	}
-	//printf(" \033[2J");
+	
+	printf(" \033[2J");
 	//system("clear");
 	
 	printf("O X O X O X O X O X O X O X O X O X O\n");
@@ -20,6 +17,30 @@ main() {
 	printf("O  Welcome to noughts and crosses!  O\n");
 	printf("X                                   X\n");
 	printf("O X O X O X O X O X O X O X O X O X O\n\n");
+	
+	while(1) {
+		printf("Menu:\n");
+		printf("1\t3X3 game grid\n");
+		printf("0\tExit\n");
+		int input;
+		scanf("%d", &input);
+		if (input == 0)
+			exit(EXIT_SUCCESS);
+		else if (input == 1) {
+			GRID_SIZE = 9;
+			break;			
+		}
+		else {
+			printf("Not a valid option!\n");
+			continue;
+		}
+	}
+	
+	int* grid = malloc(sizeof(int)*GRID_SIZE);
+	int i;
+	for (i = 0; i < GRID_SIZE; i++) {
+		grid[i] = 0;
+	}
 	
 	while(1) {
 		print_grid(grid);
@@ -71,5 +92,6 @@ main() {
 		}
 	}
 	
+	free(grid);
 	return 0;
 }
