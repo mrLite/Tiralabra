@@ -20,7 +20,8 @@ struct move negamax(int game_grid[], int player) {
 		int i;
 		for(i = 0; i < GRID_SIZE; i++) {
 			if (game_grid[i] == 0) {
-				int temp_grid[9];
+				int* temp_grid = malloc(sizeof(int)*GRID_SIZE);
+				//int temp_grid[9];
 				int n;
 				for (n = 0; n < GRID_SIZE; n++) {
 					temp_grid[n] = game_grid[n];
@@ -34,6 +35,7 @@ struct move negamax(int game_grid[], int player) {
 					best_move.slot = current_slot;
 					max = -(x.max);
 				}
+				free(temp_grid);
 			}
 		}
 	}

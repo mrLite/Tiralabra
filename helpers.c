@@ -18,7 +18,7 @@ void print_grid(int grid[]) {
 		else
 			printf("O");
 			
-		if ((i+1)%((int)sqrt(GRID_SIZE)) == 0)
+		if ((i+1)%((int)(sqrt(GRID_SIZE))) == 0)
 			printf("\n");
 		else
 			printf("|");
