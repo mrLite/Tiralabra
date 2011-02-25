@@ -21,21 +21,26 @@ struct move negamax(int game_grid[], int player) {
 		for(i = 0; i < GRID_SIZE; i++) {
 			if (game_grid[i] == 0) {
 				int* temp_grid = malloc(sizeof(int)*GRID_SIZE);
-				//int temp_grid[9];
-				int n;
-				for (n = 0; n < GRID_SIZE; n++) {
-					temp_grid[n] = game_grid[n];
-				}
-				int current_slot = i;
-				temp_grid[i] = player;
+				if (temp_grid != NULL) {
+					int n;
+					for (n = 0; n < GRID_SIZE; n++) {
+						temp_grid[n] = game_grid[n];
+					}
+					int current_slot = i;
+					temp_grid[i] = player;
 
-				move x = negamax(temp_grid, ((player%2)+1));
-				if (-(x.max) > max) {
-					best_move.max = -(x.max);
-					best_move.slot = current_slot;
-					max = -(x.max);
+					move x = negamax(temp_grid, ((player%2)+1));
+					if (-(x.max) > max) {
+						best_move.max = -(x.max);
+						best_move.slot = current_slot;
+						max = -(x.max);
+					}
+					free(temp_grid);
 				}
-				free(temp_grid);
+				else {
+					printf("I CAN HAS NO MEMORY!!1\n");
+					exit(EXIT_FAILURE);
+				}
 			}
 		}
 	}

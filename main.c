@@ -48,6 +48,7 @@ main() {
 		}
 	}
 	
+	// Allocate the game grid and initialize it with zeros so all the slots are free.
 	if ((grid = malloc(sizeof(int)*GRID_SIZE)) != NULL) {
 		int i;
 		for (i = 0; i < GRID_SIZE; i++) {
@@ -67,8 +68,10 @@ main() {
 		
 		// Loop starts from the beginning until the user has input a number between 1 and 9.
 		// After a decent input we'll check if the slot chosen by the user is free.
-		if (number < 0 || number > GRID_SIZE)
+		if (number < 0 || number > GRID_SIZE) {
+			printf("Please choose a number between 1 and %d\n", GRID_SIZE);
 			continue;
+		}
 		else if (number == 0)
 			break;
 		else {
