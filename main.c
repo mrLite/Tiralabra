@@ -32,7 +32,8 @@ main() {
 		if (input == 0)
 			exit(EXIT_SUCCESS);
 		else if (input == 1) {
-			GRID_SIZE = 9;
+			GRID_SIDE = 3;
+			GRID_SIZE = GRID_SIDE*GRID_SIDE;
 			break;			
 		}
 		else if (input == 2) {

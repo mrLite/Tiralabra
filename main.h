@@ -1,1 +1,2 @@
+int GRID_SIDE;
 int GRID_SIZE;
