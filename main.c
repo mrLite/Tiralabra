@@ -7,7 +7,7 @@
 #include "helpers.h"
 #include "negamax.h"
 
-main() {
+int main() {
 	int number;		// This will be used to hold the player's move in the grid.
 	int* grid;		// The game grid array.
 	int input;		// User's input from the main menu.
@@ -39,7 +39,8 @@ main() {
 		else if (input == 2) {
 			printf("Under construction. Sorry!\n");
 			continue;
-			// GRID_SIZE = 16;
+			// GRID_SIDE = 4;
+			// GRID_SIZE = GRID_SIDE*GRID_SIDE;
 			// break;
 		}
 		else {

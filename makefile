@@ -1,6 +1,6 @@
 # makefile
 
-CC = gcc 
+CC = gcc -Wall -g
 
 OXO: main.o helpers.o negamax.o
 	$(CC) main.o helpers.o negamax.o -o OXO
