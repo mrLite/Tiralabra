@@ -12,7 +12,7 @@ int main() {
 	int* grid;		// The game grid array.
 	int input;		// User's input from the main menu.
 	
-	printf(" \033[2J");
+	printf(" \033[2J\n");
 	//system("clear");
 	
 	printf("O X O X O X O X O X O X O X O X O X O\n");
@@ -67,7 +67,7 @@ int main() {
 		printf("It's your turn, pick a number.\n0 will quit the game.\n");
 		scanf("%d", &number);
 		
-		// Loop starts from the beginning until the user has input a number between 1 and 9.
+		// Loop starts from the beginning until the user has input a number between 1 and GRID_SIZE.
 		// After a decent input we'll check if the slot chosen by the user is free.
 		if (number < 0 || number > GRID_SIZE) {
 			printf("Please choose a number between 1 and %d\n", GRID_SIZE);
@@ -113,6 +113,7 @@ int main() {
 		}
 	}
 	
+	// Free the memory allocated for the grid and set the pointer to NULL.
 	free(grid);
 	grid = NULL;
 	

@@ -94,10 +94,3 @@ int check_situation(int grid[]) {
 	
 	return situation;
 }
-
-int game_over(int grid[]) {
-	int rvalue;
-	rvalue = check_situation(grid);
-	rvalue = (rvalue == 1 || rvalue == -1 || rvalue == 10 ) ? 1 : 0;
-	return rvalue;
-}
