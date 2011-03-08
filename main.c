@@ -12,8 +12,7 @@ int main() {
 	int* grid;		// The game grid array.
 	int input;		// User's input from the main menu.
 	
-	printf(" \033[2J\n");
-	//system("clear");
+	printf(" \033[2J\n"); // clears the screen.
 	
 	printf("O X O X O X O X O X O X O X O X O X O\n");
 	printf("X                                   X\n");
@@ -21,6 +20,7 @@ int main() {
 	printf("X                                   X\n");
 	printf("O X O X O X O X O X O X O X O X O X O\n\n");
 	
+	// This loop is for the main menu.
 	while(1) {
 		printf("Main menu:\n");
 		printf("1\t3X3 game grid\n");
@@ -61,6 +61,7 @@ int main() {
 		exit(EXIT_FAILURE);
 	}
 	
+	// This loop is being executed during the game and breaks when the game ends or if the user inputs the number 0.
 	while(1) {
 		print_grid(grid);
 		
@@ -68,7 +69,7 @@ int main() {
 		scanf("%d", &number);
 		
 		// Loop starts from the beginning until the user has input a number between 1 and GRID_SIZE.
-		// After a decent input we'll check if the slot chosen by the user is free.
+		// After a valid input we'll check if the slot chosen by the user is free.
 		if (number < 0 || number > GRID_SIZE) {
 			printf("Please choose a number between 1 and %d\n", GRID_SIZE);
 			continue;
@@ -84,7 +85,7 @@ int main() {
 				grid[number-1] = 1;
 			}
 		}
-		// After the player's turn the game situation must be checked to see if it has ended, either in a win or a tie.
+		// After the player's turn the game situation must be checked to see if it has ended, either in a win or in a tie.
 		if (check_situation(grid) == 1) {
 			print_grid(grid);
 			printf("X has won the game!\n");
