@@ -76,11 +76,11 @@ int main() {
 		else if (number == 0)
 			break;
 		else {
-			if (check_availability(grid, number) == 0) {
+			if (check_availability(grid, number-1) == 0) {
 				printf("The slot %d is already taken!\n", number);
 				continue;
 			}
-			else if (check_availability(grid, number) == 1) {
+			else if (check_availability(grid, number-1) == 1) {
 				grid[number-1] = 1;
 			}
 		}
@@ -98,7 +98,6 @@ int main() {
 		
 		// Opponents turn, after which we check if it has won the game or if the game ended in a tie.
 		move cpu = negamax(grid, 2);
-		printf("CPU: %d\t%d\n", cpu.slot+1, cpu.max);
 		grid[cpu.slot] = 2;
 		
 		if (check_situation(grid) == -1) {

@@ -6,6 +6,7 @@
 #include "main.h"
 #include "helpers.h"
 #include "negamax.h"
+#include "test.h"
 
 // Returns struct move {slot, value}, where slot is the index of the move on the game grid which yields the best value.
 struct move negamax(int game_grid[], int player) {

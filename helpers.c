@@ -6,6 +6,7 @@
 #include "main.h"
 #include "helpers.h"
 #include "negamax.h"
+#include "test.h"
 
 // Prints the game grid showing available slots as numbers.
 void print_grid(int grid[]) {
@@ -36,13 +37,13 @@ int grid_full(int grid[]) {
 	return full;
 }
 
-// Check to see if the slot in the game grid (1..9) chosen by the user is available.
+// Check to see if the slot in the game grid chosen by the user is available.
 // Returns 1 if available, 0 if not.
 int check_availability(int grid[], int number) {
 	int available;
-	if (grid[number-1] != 0)
+	if (grid[number] != 0)
 		available = 0;
-	else if (grid[number-1] == 0)
+	else if (grid[number] == 0)
 		available = 1;
 	return available;
 }
