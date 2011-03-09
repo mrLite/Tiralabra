@@ -8,7 +8,9 @@
 #include "negamax.h"
 #include "test.h"
 
-// Returns struct move {slot, value}, where slot is the index of the move on the game grid which yields the best value.
+///
+/// Returns struct move {slot, value}, where slot is the index of the move on the game grid which yields the best value.
+///
 struct move negamax(int game_grid[], int player) {
 	// To start with, we have to check if the game is still on.
 	int situation = check_situation(game_grid);

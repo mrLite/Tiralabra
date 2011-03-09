@@ -13,7 +13,9 @@ int failed_tests = 0;
 int GRID_SIZE = 9;
 int GRID_SIDE = 3;
 
-// Initialize the game grid with zeros.
+///
+/// Initialize the game grid with zeros.
+///
 void initialize_grid() {
 	int i;
 	for (i = 0; i < 9; i++) {
@@ -21,8 +23,10 @@ void initialize_grid() {
 	}
 }
 
-// Plays 50 games of noughts and crosses with two computer players competing against each other.
-// Should return 50 ties if the algorithm works properly.
+///
+/// Plays 50 games of noughts and crosses with two computer players competing against each other.
+/// Should return 50 ties if the algorithm works properly.
+///
 void test_negamax() {
 	printf("running test test_negamax...\n");
 	
@@ -65,7 +69,9 @@ void test_negamax() {
 	tests_run++;
 }
 
-// Tests if the function grid_full() returns a valid value.
+///
+/// Tests if the function grid_full() returns a valid value.
+///
 void test_grid_full() {
 	printf("running test test_grid_full...\n");
 	
@@ -80,10 +86,12 @@ void test_grid_full() {
 	tests_run++;
 }
 
-// Tests if the function check_situation() returns valid values in three situations.
-// First situation tests an empty grid where the game is still going and should return 0.
-// Second situation tests a grid where X has won the game and thus should return 1.
-// Third one tests the situation when the game has ended in a tie and should return 10.
+///
+/// Tests if the function check_situation() returns valid values in three situations.
+/// First situation tests an empty grid where the game is still going and should return 0.
+/// Second situation tests a grid where X has won the game and thus should return 1.
+/// Third one tests the situation when the game has ended in a tie and should return 10.
+///
 void test_check_situation() {
 	printf("running test test_check_situation...\n");
 	
@@ -112,8 +120,10 @@ void test_check_situation() {
 	tests_run++;
 }
 
-// Tests the availability of a slot in the game grid.
-// First an empty slot should return 1 and a slot which has been used should return 0.
+///
+/// Tests the availability of a slot in the game grid.
+/// First an empty slot should return 1 and a slot which has been used should return 0.
+///
 void test_check_availability() {
 	printf("running test test_check_availability...\n");
 		
@@ -132,7 +142,9 @@ void test_check_availability() {
 	tests_run++;
 }
 
-// Runs the four test functions and prints the results.
+///
+/// Runs the four test functions and prints the results.
+///
 int main() {
 	test_check_availability();
 	test_check_situation();
@@ -142,4 +154,6 @@ int main() {
 	printf("\nTEST OUTCOME:\n");
 	printf("number of tests run: %d\n", tests_run);
 	printf("number of failed tests: %d\n", failed_tests);
+	
+	return 0;
 }

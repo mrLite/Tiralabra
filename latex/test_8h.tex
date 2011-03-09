@@ -1,0 +1,66 @@
+\hypertarget{test_8h}{
+\section{/Users/AQ/Projektit/tiralabra/test.h File Reference}
+\label{test_8h}\index{/Users/AQ/Projektit/tiralabra/test.h@{/Users/AQ/Projektit/tiralabra/test.h}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{test_8h_a4340e6394747151fa6a17bdf39869691}{initialize\_\-grid} ()
+\item 
+void \hyperlink{test_8h_ae286213368b04721b4e18874cb322fe4}{test\_\-negamax} ()
+\item 
+void \hyperlink{test_8h_a3b0eba126222fbb946ccb6346b5c5c07}{test\_\-grid\_\-full} ()
+\item 
+void \hyperlink{test_8h_a3b7f4b6be5f7f2893dafdf4be0a1cb87}{test\_\-check\_\-situation} ()
+\item 
+void \hyperlink{test_8h_a2660a4bd7b5e51be742fa76afc530bf0}{test\_\-check\_\-availability} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{test_8h_a4340e6394747151fa6a17bdf39869691}{
+\index{test.h@{test.h}!initialize\_\-grid@{initialize\_\-grid}}
+\index{initialize\_\-grid@{initialize\_\-grid}!test.h@{test.h}}
+\subsubsection[{initialize\_\-grid}]{\setlength{\rightskip}{0pt plus 5cm}void initialize\_\-grid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{test_8h_a4340e6394747151fa6a17bdf39869691}
+Initialize the game grid with zeros. \hypertarget{test_8h_a2660a4bd7b5e51be742fa76afc530bf0}{
+\index{test.h@{test.h}!test\_\-check\_\-availability@{test\_\-check\_\-availability}}
+\index{test\_\-check\_\-availability@{test\_\-check\_\-availability}!test.h@{test.h}}
+\subsubsection[{test\_\-check\_\-availability}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-check\_\-availability (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{test_8h_a2660a4bd7b5e51be742fa76afc530bf0}
+Tests the availability of a slot in the game grid. First an empty slot should return 1 and a slot which has been used should return 0. \hypertarget{test_8h_a3b7f4b6be5f7f2893dafdf4be0a1cb87}{
+\index{test.h@{test.h}!test\_\-check\_\-situation@{test\_\-check\_\-situation}}
+\index{test\_\-check\_\-situation@{test\_\-check\_\-situation}!test.h@{test.h}}
+\subsubsection[{test\_\-check\_\-situation}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-check\_\-situation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{test_8h_a3b7f4b6be5f7f2893dafdf4be0a1cb87}
+Tests if the function \hyperlink{helpers_8c_a04e8ac946487d1c90c8df4a25cafc850}{check\_\-situation()} returns valid values in three situations. First situation tests an empty grid where the game is still going and should return 0. Second situation tests a grid where X has won the game and thus should return 1. Third one tests the situation when the game has ended in a tie and should return 10. \hypertarget{test_8h_a3b0eba126222fbb946ccb6346b5c5c07}{
+\index{test.h@{test.h}!test\_\-grid\_\-full@{test\_\-grid\_\-full}}
+\index{test\_\-grid\_\-full@{test\_\-grid\_\-full}!test.h@{test.h}}
+\subsubsection[{test\_\-grid\_\-full}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-grid\_\-full (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{test_8h_a3b0eba126222fbb946ccb6346b5c5c07}
+Tests if the function \hyperlink{helpers_8c_ac81647dc49ca3194b38350af30a59cc1}{grid\_\-full()} returns a valid value. \hypertarget{test_8h_ae286213368b04721b4e18874cb322fe4}{
+\index{test.h@{test.h}!test\_\-negamax@{test\_\-negamax}}
+\index{test\_\-negamax@{test\_\-negamax}!test.h@{test.h}}
+\subsubsection[{test\_\-negamax}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-negamax (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{test_8h_ae286213368b04721b4e18874cb322fe4}
+Plays 50 games of noughts and crosses with two computer players competing against each other. Should return 50 ties if the algorithm works properly. 

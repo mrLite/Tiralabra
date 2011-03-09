@@ -2,6 +2,7 @@
 
 CC = gcc -Wall -g
 
+all: OXO test
 OXO: main.o helpers.o negamax.o
 	$(CC) main.o helpers.o negamax.o -o OXO
 test: helpers.o negamax.o test.o
@@ -17,3 +18,5 @@ test.o: test.c
 
 clean:
 	rm *.o
+	rm OXO
+	rm test

@@ -1,0 +1,41 @@
+\hypertarget{negamax_8h}{
+\section{/Users/AQ/Projektit/tiralabra/negamax.h File Reference}
+\label{negamax_8h}\index{/Users/AQ/Projektit/tiralabra/negamax.h@{/Users/AQ/Projektit/tiralabra/negamax.h}}
+}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmove}{move}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structmove}{move} \hyperlink{negamax_8h_ac042138d2b4ac89d797047abf0f12fe3}{move}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmove}{move} \hyperlink{negamax_8h_aff7c58fc39a9711a4be155f8410b152b}{negamax} (int game\_\-grid\mbox{[}$\,$\mbox{]}, int player)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{negamax_8h_ac042138d2b4ac89d797047abf0f12fe3}{
+\index{negamax.h@{negamax.h}!move@{move}}
+\index{move@{move}!negamax.h@{negamax.h}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf move}  {\bf move}}}
+\label{negamax_8h_ac042138d2b4ac89d797047abf0f12fe3}
+
+
+\subsection{Function Documentation}
+\hypertarget{negamax_8h_aff7c58fc39a9711a4be155f8410b152b}{
+\index{negamax.h@{negamax.h}!negamax@{negamax}}
+\index{negamax@{negamax}!negamax.h@{negamax.h}}
+\subsubsection[{negamax}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf move} negamax (
+\begin{DoxyParamCaption}
+\item[{int}]{game\_\-grid\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}
+\label{negamax_8h_aff7c58fc39a9711a4be155f8410b152b}
+Returns struct move \{slot, value\}, where slot is the index of the move on the game grid which yields the best value. 

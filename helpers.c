@@ -8,7 +8,9 @@
 #include "negamax.h"
 #include "test.h"
 
-// Prints the game grid showing available slots as numbers.
+///
+/// Prints the game grid showing available slots as numbers.
+///
 void print_grid(int grid[]) {
 	int i;
 	for (i = 0; i < GRID_SIZE; i++) {
@@ -26,7 +28,9 @@ void print_grid(int grid[]) {
 		}
 }
 
-// Returns 1 if the grid is full and 0 if there's at least one free slot.
+///
+/// Returns 1 if the grid is full and 0 if there's at least one free slot.
+///
 int grid_full(int grid[]) {
 	int full = 1;
 	int i;
@@ -37,8 +41,10 @@ int grid_full(int grid[]) {
 	return full;
 }
 
-// Check to see if the slot in the game grid chosen by the user is available.
-// Returns 1 if available, 0 if not.
+///
+/// Check to see if the slot in the game grid chosen by the user is available.
+/// Returns 1 if available, 0 if not.
+///
 int check_availability(int grid[], int number) {
 	int available;
 	if (grid[number] != 0)
@@ -48,8 +54,10 @@ int check_availability(int grid[], int number) {
 	return available;
 }
 
-// Checks the current game situation, returns 1 if X has won, -1 if O has won and 10 if it's a tie.
-// Also returns 0 if the game hasn't ended yet.
+///
+/// Checks the current game situation, returns 1 if X has won, -1 if O has won and 10 if it's a tie.
+/// Also returns 0 if the game hasn't ended yet.
+///
 int check_situation(int grid[]) {
 	int situation;
 	

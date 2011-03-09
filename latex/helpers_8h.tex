@@ -1,0 +1,56 @@
+\hypertarget{helpers_8h}{
+\section{/Users/AQ/Projektit/tiralabra/helpers.h File Reference}
+\label{helpers_8h}\index{/Users/AQ/Projektit/tiralabra/helpers.h@{/Users/AQ/Projektit/tiralabra/helpers.h}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{helpers_8h_ac81647dc49ca3194b38350af30a59cc1}{grid\_\-full} (int grid\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{helpers_8h_a70e5f354956952f920418349e0f534ee}{print\_\-grid} (int grid\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{helpers_8h_af4514605fe0cffbaf336210bfb2a1a2a}{check\_\-availability} (int grid\mbox{[}$\,$\mbox{]}, int number)
+\item 
+int \hyperlink{helpers_8h_a04e8ac946487d1c90c8df4a25cafc850}{check\_\-situation} (int grid\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{helpers_8h_af4514605fe0cffbaf336210bfb2a1a2a}{
+\index{helpers.h@{helpers.h}!check\_\-availability@{check\_\-availability}}
+\index{check\_\-availability@{check\_\-availability}!helpers.h@{helpers.h}}
+\subsubsection[{check\_\-availability}]{\setlength{\rightskip}{0pt plus 5cm}int check\_\-availability (
+\begin{DoxyParamCaption}
+\item[{int}]{grid\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{number}
+\end{DoxyParamCaption}
+)}}
+\label{helpers_8h_af4514605fe0cffbaf336210bfb2a1a2a}
+Check to see if the slot in the game grid chosen by the user is available. Returns 1 if available, 0 if not. \hypertarget{helpers_8h_a04e8ac946487d1c90c8df4a25cafc850}{
+\index{helpers.h@{helpers.h}!check\_\-situation@{check\_\-situation}}
+\index{check\_\-situation@{check\_\-situation}!helpers.h@{helpers.h}}
+\subsubsection[{check\_\-situation}]{\setlength{\rightskip}{0pt plus 5cm}int check\_\-situation (
+\begin{DoxyParamCaption}
+\item[{int}]{grid\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}
+\label{helpers_8h_a04e8ac946487d1c90c8df4a25cafc850}
+Checks the current game situation, returns 1 if X has won, -\/1 if O has won and 10 if it's a tie. Also returns 0 if the game hasn't ended yet. \hypertarget{helpers_8h_ac81647dc49ca3194b38350af30a59cc1}{
+\index{helpers.h@{helpers.h}!grid\_\-full@{grid\_\-full}}
+\index{grid\_\-full@{grid\_\-full}!helpers.h@{helpers.h}}
+\subsubsection[{grid\_\-full}]{\setlength{\rightskip}{0pt plus 5cm}int grid\_\-full (
+\begin{DoxyParamCaption}
+\item[{int}]{grid\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}
+\label{helpers_8h_ac81647dc49ca3194b38350af30a59cc1}
+Returns 1 if the grid is full and 0 if there's at least one free slot. \hypertarget{helpers_8h_a70e5f354956952f920418349e0f534ee}{
+\index{helpers.h@{helpers.h}!print\_\-grid@{print\_\-grid}}
+\index{print\_\-grid@{print\_\-grid}!helpers.h@{helpers.h}}
+\subsubsection[{print\_\-grid}]{\setlength{\rightskip}{0pt plus 5cm}void print\_\-grid (
+\begin{DoxyParamCaption}
+\item[{int}]{grid\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}
+\label{helpers_8h_a70e5f354956952f920418349e0f534ee}
+Prints the game grid showing available slots as numbers. 

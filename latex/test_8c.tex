@@ -1,0 +1,125 @@
+\hypertarget{test_8c}{
+\section{/Users/AQ/Projektit/tiralabra/test.c File Reference}
+\label{test_8c}\index{/Users/AQ/Projektit/tiralabra/test.c@{/Users/AQ/Projektit/tiralabra/test.c}}
+}
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$time.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include \char`\"{}helpers.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}negamax.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}test.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{test_8c_a4340e6394747151fa6a17bdf39869691}{initialize\_\-grid} ()
+\item 
+void \hyperlink{test_8c_ae286213368b04721b4e18874cb322fe4}{test\_\-negamax} ()
+\item 
+void \hyperlink{test_8c_a3b0eba126222fbb946ccb6346b5c5c07}{test\_\-grid\_\-full} ()
+\item 
+void \hyperlink{test_8c_a3b7f4b6be5f7f2893dafdf4be0a1cb87}{test\_\-check\_\-situation} ()
+\item 
+void \hyperlink{test_8c_a2660a4bd7b5e51be742fa76afc530bf0}{test\_\-check\_\-availability} ()
+\item 
+int \hyperlink{test_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{test_8c_a915cc4ac17fa2d84c48c0d92014face1}{grid\_\-9} \mbox{[}9\mbox{]}
+\item 
+int \hyperlink{test_8c_a91aa4203331e915f2d20dd26579791ee}{tests\_\-run} = 0
+\item 
+int \hyperlink{test_8c_a924772f712c4cad8e2ce6ed5ee543257}{failed\_\-tests} = 0
+\item 
+int \hyperlink{test_8c_a85156fe357ec100b5ade495271bce4b6}{GRID\_\-SIZE} = 9
+\item 
+int \hyperlink{test_8c_ae4bdbe3ea232865ee50062cf83e30e39}{GRID\_\-SIDE} = 3
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{test_8c_a4340e6394747151fa6a17bdf39869691}{
+\index{test.c@{test.c}!initialize\_\-grid@{initialize\_\-grid}}
+\index{initialize\_\-grid@{initialize\_\-grid}!test.c@{test.c}}
+\subsubsection[{initialize\_\-grid}]{\setlength{\rightskip}{0pt plus 5cm}void initialize\_\-grid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{test_8c_a4340e6394747151fa6a17bdf39869691}
+Initialize the game grid with zeros. \hypertarget{test_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{
+\index{test.c@{test.c}!main@{main}}
+\index{main@{main}!test.c@{test.c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{test_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
+Runs the four test functions and prints the results. \hypertarget{test_8c_a2660a4bd7b5e51be742fa76afc530bf0}{
+\index{test.c@{test.c}!test\_\-check\_\-availability@{test\_\-check\_\-availability}}
+\index{test\_\-check\_\-availability@{test\_\-check\_\-availability}!test.c@{test.c}}
+\subsubsection[{test\_\-check\_\-availability}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-check\_\-availability (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{test_8c_a2660a4bd7b5e51be742fa76afc530bf0}
+Tests the availability of a slot in the game grid. First an empty slot should return 1 and a slot which has been used should return 0. \hypertarget{test_8c_a3b7f4b6be5f7f2893dafdf4be0a1cb87}{
+\index{test.c@{test.c}!test\_\-check\_\-situation@{test\_\-check\_\-situation}}
+\index{test\_\-check\_\-situation@{test\_\-check\_\-situation}!test.c@{test.c}}
+\subsubsection[{test\_\-check\_\-situation}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-check\_\-situation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{test_8c_a3b7f4b6be5f7f2893dafdf4be0a1cb87}
+Tests if the function \hyperlink{helpers_8c_a04e8ac946487d1c90c8df4a25cafc850}{check\_\-situation()} returns valid values in three situations. First situation tests an empty grid where the game is still going and should return 0. Second situation tests a grid where X has won the game and thus should return 1. Third one tests the situation when the game has ended in a tie and should return 10. \hypertarget{test_8c_a3b0eba126222fbb946ccb6346b5c5c07}{
+\index{test.c@{test.c}!test\_\-grid\_\-full@{test\_\-grid\_\-full}}
+\index{test\_\-grid\_\-full@{test\_\-grid\_\-full}!test.c@{test.c}}
+\subsubsection[{test\_\-grid\_\-full}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-grid\_\-full (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{test_8c_a3b0eba126222fbb946ccb6346b5c5c07}
+Tests if the function \hyperlink{helpers_8c_ac81647dc49ca3194b38350af30a59cc1}{grid\_\-full()} returns a valid value. \hypertarget{test_8c_ae286213368b04721b4e18874cb322fe4}{
+\index{test.c@{test.c}!test\_\-negamax@{test\_\-negamax}}
+\index{test\_\-negamax@{test\_\-negamax}!test.c@{test.c}}
+\subsubsection[{test\_\-negamax}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-negamax (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{test_8c_ae286213368b04721b4e18874cb322fe4}
+Plays 50 games of noughts and crosses with two computer players competing against each other. Should return 50 ties if the algorithm works properly. 
+
+\subsection{Variable Documentation}
+\hypertarget{test_8c_a924772f712c4cad8e2ce6ed5ee543257}{
+\index{test.c@{test.c}!failed\_\-tests@{failed\_\-tests}}
+\index{failed\_\-tests@{failed\_\-tests}!test.c@{test.c}}
+\subsubsection[{failed\_\-tests}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf failed\_\-tests} = 0}}
+\label{test_8c_a924772f712c4cad8e2ce6ed5ee543257}
+\hypertarget{test_8c_a915cc4ac17fa2d84c48c0d92014face1}{
+\index{test.c@{test.c}!grid\_\-9@{grid\_\-9}}
+\index{grid\_\-9@{grid\_\-9}!test.c@{test.c}}
+\subsubsection[{grid\_\-9}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf grid\_\-9}\mbox{[}9\mbox{]}}}
+\label{test_8c_a915cc4ac17fa2d84c48c0d92014face1}
+\hypertarget{test_8c_ae4bdbe3ea232865ee50062cf83e30e39}{
+\index{test.c@{test.c}!GRID\_\-SIDE@{GRID\_\-SIDE}}
+\index{GRID\_\-SIDE@{GRID\_\-SIDE}!test.c@{test.c}}
+\subsubsection[{GRID\_\-SIDE}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf GRID\_\-SIDE} = 3}}
+\label{test_8c_ae4bdbe3ea232865ee50062cf83e30e39}
+\hypertarget{test_8c_a85156fe357ec100b5ade495271bce4b6}{
+\index{test.c@{test.c}!GRID\_\-SIZE@{GRID\_\-SIZE}}
+\index{GRID\_\-SIZE@{GRID\_\-SIZE}!test.c@{test.c}}
+\subsubsection[{GRID\_\-SIZE}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf GRID\_\-SIZE} = 9}}
+\label{test_8c_a85156fe357ec100b5ade495271bce4b6}
+\hypertarget{test_8c_a91aa4203331e915f2d20dd26579791ee}{
+\index{test.c@{test.c}!tests\_\-run@{tests\_\-run}}
+\index{tests\_\-run@{tests\_\-run}!test.c@{test.c}}
+\subsubsection[{tests\_\-run}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf tests\_\-run} = 0}}
+\label{test_8c_a91aa4203331e915f2d20dd26579791ee}

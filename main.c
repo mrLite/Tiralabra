@@ -112,7 +112,6 @@ int main() {
 			break;
 		}
 	}
-	
 	// Free the memory allocated for the grid and set the pointer to NULL.
 	free(grid);
 	grid = NULL;
